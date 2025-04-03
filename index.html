@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name - Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      text-align: center;
+      color: white;
+      overflow-x: hidden;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h1,
+    h2 {
+      color: #fff;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      color: #333;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .dark-mode {
+      background: #222;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <div class="container">
+    <h1>Your Name</h1>
+    <h2>Senior iOS & Flutter Engineer</h2>
+    <p>Experienced in building scalable, high-performance applications with a focus on user-centric solutions.</p>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <p>Swift, Objective-C, Dart, Flutter, UIKit, SwiftUI, REST APIs, Firebase, Core Data, Git, CI/CD, AWS</p>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <p><strong>Company 1 (Current)</strong> - Senior iOS & Flutter Engineer</p>
+      <p>Leading development and architecture for scalable mobile applications.</p>
+      <p><strong>Company 2</strong> - iOS Developer</p>
+      <p>Developed multiple high-performance iOS applications for global clients.</p>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <p><strong>Project 1:</strong> Enterprise-level e-commerce iOS application.</p>
+      <p><strong>Project 2:</strong> Fintech cross-platform mobile app using Flutter.</p>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <p>Bachelor's Degree in Computer Science</p>
+    </div>
+
+    <div class="section">
+      <h2>Certifications</h2>
+      <p>KONY Technology Certified Developer</p>
+      <p>Agile Scrum Master Certification</p>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="https://github.com/yourgithub">github.com/yourgithub</a></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let sections = document.querySelectorAll(".section");
+      sections.forEach((section, index) => {
+        setTimeout(() => {
+          section.classList.add("visible");
+        }, index * 300);
+      });
+    });
+  </script>
+</body>
+
+</html>
